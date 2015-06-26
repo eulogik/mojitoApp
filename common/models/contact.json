@@ -1,0 +1,49 @@
+{
+  "name": "contact",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "properties": {
+    "firstName": {
+      "type": "string"
+    },
+    "lastName": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "number"
+    },
+    "email": {
+      "type": "string"
+    },
+    "city": {
+      "type": "string"
+    },
+    "address": {
+      "type": "string"
+    },
+    "createdAt": {
+      "type": "date"
+    },
+    "dob": {
+      "type": "date"
+    },
+    "gender": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "enrollments": {
+      "type": "hasMany",
+      "model": "enrollment",
+      "foreignKey": ""
+    },
+    "reminders": {
+      "type": "hasMany",
+      "model": "reminder",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": []
+}

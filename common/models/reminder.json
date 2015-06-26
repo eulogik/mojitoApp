@@ -1,0 +1,26 @@
+{
+  "name": "reminder",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "properties": {
+    "date": {
+      "type": "date"
+    },
+    "title": {
+      "type": "string"
+    },
+    "completed": {
+      "type": "boolean"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "center": {
+      "type": "belongsTo",
+      "model": "center",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": []
+}

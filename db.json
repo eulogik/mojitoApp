@@ -1,0 +1,49 @@
+{
+  "ids": {
+    "User": 4,
+    "AccessToken": 2,
+    "ACL": 1,
+    "RoleMapping": 1,
+    "Role": 1,
+    "contact": 6,
+    "program": 1,
+    "center": 1,
+    "expense": 1,
+    "income": 2,
+    "enrollment": 7,
+    "reminder": 1
+  },
+  "models": {
+    "User": {
+      "1": "{\"username\":\"pri\",\"password\":\"$2a$10$BCQpLgtqU5UHnf9.mtJGg.gWq.C2gm3VkUavSU73PEkNylcbjQvF.\",\"email\":\"pg@gmail.com\",\"id\":1}",
+      "2": "{\"username\":\"p\",\"password\":\"$2a$10$0jRUwFyXGn9C8BpfQVI4RuPHrBEfHcrod09vyuuHNKBBKF2lFEdam\",\"email\":\"pg1@gmail.com\",\"id\":2}",
+      "3": "{\"username\":\"pr\",\"password\":\"$2a$10$CjNVeIJYp7pq3MCmIY05GuwQ5J1bsUnNC2Lp9t8TvSzZ9YssNWBOG\",\"email\":\"pg2@gmail.com\",\"id\":3}"
+    },
+    "AccessToken": {
+      "z0a4QdbvR8PQKbLdCbbGjOsiNnaCNCESPjIUUmPA90Z3ZirmlPW1cppmCZSvpYIY": "{\"id\":\"z0a4QdbvR8PQKbLdCbbGjOsiNnaCNCESPjIUUmPA90Z3ZirmlPW1cppmCZSvpYIY\",\"ttl\":1209600,\"created\":\"2015-06-24T08:46:00.434Z\",\"userId\":1}"
+    },
+    "ACL": {},
+    "RoleMapping": {},
+    "Role": {},
+    "contact": {
+      "1": "{\"firstName\":\"p\",\"lastName\":\"g\",\"phone\":123,\"email\":\"a@gmail.com\",\"city\":\"bhopal\",\"address\":\"MP\",\"createdAt\":\"2012-12-11T18:30:00.000Z\",\"dob\":\"2012-12-11T18:30:00.000Z\",\"gender\":\"f\",\"id\":1,\"centerId\":1}",
+      "2": "{\"firstName\":\"pr\",\"lastName\":\"g\",\"phone\":12345,\"email\":\"b@gmail.com\",\"city\":\"bhopal\",\"address\":\"MP\",\"createdAt\":\"2012-12-10T18:30:00.000Z\",\"dob\":\"2012-12-10T18:30:00.000Z\",\"gender\":\"f\",\"id\":2,\"centerId\":2}",
+      "3": "{\"firstName\":\"pri\",\"lastName\":\"g\",\"phone\":1234567,\"email\":\"c@gmail.com\",\"city\":\"bhopal\",\"address\":\"MP\",\"createdAt\":\"2012-12-09T18:30:00.000Z\",\"dob\":\"2012-12-09T18:30:00.000Z\",\"gender\":\"f\",\"id\":3,\"centerId\":3}",
+      "4": "{\"firstName\":\"pri\",\"lastName\":\"g\",\"phone\":1234567,\"email\":\"c@gmail.com\",\"city\":\"bhopal\",\"address\":\"MP\",\"createdAt\":\"2012-12-09T18:30:00.000Z\",\"dob\":\"2012-12-09T18:30:00.000Z\",\"gender\":\"f\",\"id\":4,\"centerId\":3}"
+    },
+    "program": {},
+    "center": {},
+    "expense": {},
+    "income": {
+      "1": "{\"enrollmentId\":6,\"id\":1}"
+    },
+    "enrollment": {
+      "1": "{\"netFee\":1000,\"date\":\"2012-12-11T18:30:00.000Z\",\"status\":\"ongoing\",\"createdAt\":\"2012-12-11T18:30:00.000Z\",\"id\":1,\"contactId\":1}",
+      "2": "{\"netFee\":1200,\"date\":\"2012-12-10T18:30:00.000Z\",\"status\":\"onhold\",\"createdAt\":\"2012-12-11T18:30:00.000Z\",\"id\":2,\"contactId\":2}",
+      "3": "{\"netFee\":1500,\"date\":\"2012-12-09T18:30:00.000Z\",\"status\":\"ongoing\",\"createdAt\":\"2012-12-09T18:30:00.000Z\",\"id\":3,\"contactId\":3}",
+      "4": "{\"netFee\":1700,\"date\":\"2015-06-05T18:30:00.000Z\",\"status\":\"onhold\",\"createdAt\":\"2015-06-05T18:30:00.000Z\",\"id\":4,\"contactId\":4}",
+      "6": "{\"netFee\":1200,\"status\":\"ongoing\",\"createdAt\":\"2015-06-24T10:17:08.000Z\",\"contactId\":1,\"id\":6}"
+    },
+    "reminder": {}
+  }
+}

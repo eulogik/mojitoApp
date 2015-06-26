@@ -1,0 +1,29 @@
+{
+  "name": "expense",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "properties": {
+    "date": {
+      "type": "date"
+    },
+    "amount": {
+      "type": "number"
+    },
+    "description": {
+      "type": "string"
+    },
+    "createdAt": {
+      "type": "date"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "center": {
+      "type": "belongsTo",
+      "model": "center",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": []
+}

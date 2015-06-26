@@ -1,0 +1,39 @@
+{
+  "name": "enrollment",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "properties": {
+    "netFee": {
+      "type": "number"
+    },
+    "date": {
+      "type": "date"
+    },
+    "status": {
+      "type": "string"
+    },
+    "createdAt": {
+      "type": "date"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "incomes": {
+      "type": "hasMany",
+      "model": "income",
+      "foreignKey": ""
+    },
+    "programs": {
+      "type": "hasOne",
+      "model": "program",
+      "foreignKey": ""
+    },
+    "contact": {
+      "type": "belongsTo",
+      "model": "contact",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": []
+}

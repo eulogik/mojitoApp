@@ -1,0 +1,23 @@
+{
+  "name": "income",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "properties": {
+    "amount": {
+      "type": "number"
+    },
+    "date": {
+      "type": "date"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "center": {
+      "type": "belongsTo",
+      "model": "center",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": []
+}
