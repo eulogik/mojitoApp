@@ -23,11 +23,6 @@
       "model": "income",
       "foreignKey": ""
     },
-    "programs": {
-      "type": "hasOne",
-      "model": "program",
-      "foreignKey": ""
-    },
     "contact": {
       "type": "belongsTo",
       "model": "contact",
