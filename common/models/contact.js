@@ -3,21 +3,21 @@ module.exports = function(contact)
   var conatct_array=[];
   contact.getContacts=function(cb)
   {
+    console.log('getContacts');
   contact.find({include:'enrollments'},function(err, d){
-    d.forEach(function(enrollments2){
+    console.log(d.length);
+    d.forEach(function(cont){
+      //console.log(cont);
+      cont.type='lead';
+      var c=cont.toJSON();
 
-      var e=enrollments2.toJSON();
+      var status_array=c.enrollments;
+      status_array.forEach(function(enroll){
+        if(enroll.status=='ongoing')
+        {
+          cont.type='customer';
+        }
 
-      var status_array=e.enrollments;
-      status_array.forEach(function(s){
-        if(s.status=='ongoing')
-        {
-          enrollments2.type='customer';
-        }
-        else
-        {
-          enrollments2.type='lead';
-        }
       });
     });
     cb(null,d);
