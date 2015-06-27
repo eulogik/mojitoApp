@@ -1,24 +1,28 @@
+
 module.exports = function(contact)
 {
+  var conatct_array=[];
   contact.getContacts=function(cb)
   {
-    contact.find({include:'enrollments'},function(err, d){
+  contact.find({include:'enrollments'},function(err, d){
+    d.forEach(function(enrollments2){
 
-      cb(null,d);
+      var e=enrollments2.toJSON();
 
-    /*  d.forEach(function(e){
-        console.log(d);
-        if(e && e.status=='ongoing')
-        {
-          d.type='customer';
+      var status_array=e.enrollments;
+      status_array.forEach(function(s){
+        if(s.status=='ongoing'){
+          enrollments2.type='customer';
+        }else{
+          enrollments2.type='lead';
         }
-        else {
-          d.type='lead';
-        }
 
-        console.log(d.type);
+      });
 
- });*/
+    });
+    cb(null,d);
+
+
 });
 };
 
@@ -51,5 +55,5 @@ module.exports = function(contact)
     http:{path:'/getLead',verb:'post'},
     accepts:[{arg:'id',type:'number',http:{source:'body'}}],
     returns:{arg:'resp',type:'string'}
-      });
+  });
 };
