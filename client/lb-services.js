@@ -1466,6 +1466,84 @@ module.factory(
           method: "PUT"
         },
 
+        /**
+         * @ngdoc method
+         * @name lbServices.Contact#getContacts
+         * @methodOf lbServices.Contact
+         *
+         * @description
+         *
+         * <em>
+         * (The remote method definition does not provide any description.)
+         * </em>
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *   This method does not accept any parameters.
+         *   Supply an empty object or omit this argument altogether.
+         *
+         * @param {Object} postData Request data.
+         *
+         * This method does not accept any data. Supply an empty object.
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * Data properties:
+         *
+         *  - `response` – `{string=}` - 
+         */
+        "getContacts": {
+          url: urlBase + "/contacts/getContacts",
+          method: "POST"
+        },
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Contact#getLead
+         * @methodOf lbServices.Contact
+         *
+         * @description
+         *
+         * <em>
+         * (The remote method definition does not provide any description.)
+         * </em>
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *   This method does not accept any parameters.
+         *   Supply an empty object or omit this argument altogether.
+         *
+         * @param {Object} postData Request data.
+         *
+         * This method expects a subset of model properties as request parameters.
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * Data properties:
+         *
+         *  - `resp` – `{string=}` - 
+         */
+        "getLead": {
+          url: urlBase + "/contacts/getLead",
+          method: "POST"
+        },
+
         // INTERNAL. Use Center.contacts.findById() instead.
         "::findById::center::contacts": {
           url: urlBase + "/centers/:id/contacts/:fk",
@@ -2205,6 +2283,49 @@ module.factory(
       { 'id': '@id' },
       {
 
+        // INTERNAL. Use Program.enrollment.findById() instead.
+        "prototype$__findById__enrollment": {
+          url: urlBase + "/programs/:id/enrollment/:fk",
+          method: "GET"
+        },
+
+        // INTERNAL. Use Program.enrollment.destroyById() instead.
+        "prototype$__destroyById__enrollment": {
+          url: urlBase + "/programs/:id/enrollment/:fk",
+          method: "DELETE"
+        },
+
+        // INTERNAL. Use Program.enrollment.updateById() instead.
+        "prototype$__updateById__enrollment": {
+          url: urlBase + "/programs/:id/enrollment/:fk",
+          method: "PUT"
+        },
+
+        // INTERNAL. Use Program.enrollment() instead.
+        "prototype$__get__enrollment": {
+          isArray: true,
+          url: urlBase + "/programs/:id/enrollment",
+          method: "GET"
+        },
+
+        // INTERNAL. Use Program.enrollment.create() instead.
+        "prototype$__create__enrollment": {
+          url: urlBase + "/programs/:id/enrollment",
+          method: "POST"
+        },
+
+        // INTERNAL. Use Program.enrollment.destroyAll() instead.
+        "prototype$__delete__enrollment": {
+          url: urlBase + "/programs/:id/enrollment",
+          method: "DELETE"
+        },
+
+        // INTERNAL. Use Program.enrollment.count() instead.
+        "prototype$__count__enrollment": {
+          url: urlBase + "/programs/:id/enrollment/count",
+          method: "GET"
+        },
+
         /**
          * @ngdoc method
          * @name lbServices.Program#create
@@ -2547,30 +2668,6 @@ module.factory(
           url: urlBase + "/programs/:id",
           method: "PUT"
         },
-
-        // INTERNAL. Use Enrollment.programs() instead.
-        "::get::enrollment::programs": {
-          url: urlBase + "/enrollments/:id/programs",
-          method: "GET"
-        },
-
-        // INTERNAL. Use Enrollment.programs.create() instead.
-        "::create::enrollment::programs": {
-          url: urlBase + "/enrollments/:id/programs",
-          method: "POST"
-        },
-
-        // INTERNAL. Use Enrollment.programs.update() instead.
-        "::update::enrollment::programs": {
-          url: urlBase + "/enrollments/:id/programs",
-          method: "PUT"
-        },
-
-        // INTERNAL. Use Enrollment.programs.destroy() instead.
-        "::destroy::enrollment::programs": {
-          url: urlBase + "/enrollments/:id/programs",
-          method: "DELETE"
-        },
       }
     );
 
@@ -2707,6 +2804,269 @@ module.factory(
     */
     R.modelName = "Program";
 
+    /**
+     * @ngdoc object
+     * @name lbServices.Program.enrollment
+     * @header lbServices.Program.enrollment
+     * @object
+     * @description
+     *
+     * The object `Program.enrollment` groups methods
+     * manipulating `Enrollment` instances related to `Program`.
+     *
+     * Call {@link lbServices.Program#enrollment Program.enrollment()}
+     * to query all related instances.
+     */
+
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Program#enrollment
+         * @methodOf lbServices.Program
+         *
+         * @description
+         *
+         * Queries enrollment of program.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - PersistedModel id
+         *
+         *  - `filter` – `{object=}` - 
+         *
+         * @param {function(Array.<Object>,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Array.<Object>} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Enrollment` object.)
+         * </em>
+         */
+        R.enrollment = function() {
+          var TargetResource = $injector.get("Enrollment");
+          var action = TargetResource["::get::program::enrollment"];
+          return action.apply(R, arguments);
+        };
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Program.enrollment#count
+         * @methodOf lbServices.Program.enrollment
+         *
+         * @description
+         *
+         * Counts enrollment of program.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - PersistedModel id
+         *
+         *  - `where` – `{object=}` - Criteria to match model instances
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * Data properties:
+         *
+         *  - `count` – `{number=}` - 
+         */
+        R.enrollment.count = function() {
+          var TargetResource = $injector.get("Enrollment");
+          var action = TargetResource["::count::program::enrollment"];
+          return action.apply(R, arguments);
+        };
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Program.enrollment#create
+         * @methodOf lbServices.Program.enrollment
+         *
+         * @description
+         *
+         * Creates a new instance in enrollment of this model.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - PersistedModel id
+         *
+         * @param {Object} postData Request data.
+         *
+         * This method expects a subset of model properties as request parameters.
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Enrollment` object.)
+         * </em>
+         */
+        R.enrollment.create = function() {
+          var TargetResource = $injector.get("Enrollment");
+          var action = TargetResource["::create::program::enrollment"];
+          return action.apply(R, arguments);
+        };
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Program.enrollment#destroyAll
+         * @methodOf lbServices.Program.enrollment
+         *
+         * @description
+         *
+         * Deletes all enrollment of this model.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - PersistedModel id
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * This method returns no data.
+         */
+        R.enrollment.destroyAll = function() {
+          var TargetResource = $injector.get("Enrollment");
+          var action = TargetResource["::delete::program::enrollment"];
+          return action.apply(R, arguments);
+        };
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Program.enrollment#destroyById
+         * @methodOf lbServices.Program.enrollment
+         *
+         * @description
+         *
+         * Delete a related item by id for enrollment.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - PersistedModel id
+         *
+         *  - `fk` – `{*}` - Foreign key for enrollment
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * This method returns no data.
+         */
+        R.enrollment.destroyById = function() {
+          var TargetResource = $injector.get("Enrollment");
+          var action = TargetResource["::destroyById::program::enrollment"];
+          return action.apply(R, arguments);
+        };
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Program.enrollment#findById
+         * @methodOf lbServices.Program.enrollment
+         *
+         * @description
+         *
+         * Find a related item by id for enrollment.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - PersistedModel id
+         *
+         *  - `fk` – `{*}` - Foreign key for enrollment
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Enrollment` object.)
+         * </em>
+         */
+        R.enrollment.findById = function() {
+          var TargetResource = $injector.get("Enrollment");
+          var action = TargetResource["::findById::program::enrollment"];
+          return action.apply(R, arguments);
+        };
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Program.enrollment#updateById
+         * @methodOf lbServices.Program.enrollment
+         *
+         * @description
+         *
+         * Update a related item by id for enrollment.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - PersistedModel id
+         *
+         *  - `fk` – `{*}` - Foreign key for enrollment
+         *
+         * @param {Object} postData Request data.
+         *
+         * This method expects a subset of model properties as request parameters.
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Enrollment` object.)
+         * </em>
+         */
+        R.enrollment.updateById = function() {
+          var TargetResource = $injector.get("Enrollment");
+          var action = TargetResource["::updateById::program::enrollment"];
+          return action.apply(R, arguments);
+        };
 
     return R;
   }]);
@@ -5075,30 +5435,6 @@ module.factory(
           method: "PUT"
         },
 
-        // INTERNAL. Use Enrollment.programs() instead.
-        "prototype$__get__programs": {
-          url: urlBase + "/enrollments/:id/programs",
-          method: "GET"
-        },
-
-        // INTERNAL. Use Enrollment.programs.create() instead.
-        "prototype$__create__programs": {
-          url: urlBase + "/enrollments/:id/programs",
-          method: "POST"
-        },
-
-        // INTERNAL. Use Enrollment.programs.update() instead.
-        "prototype$__update__programs": {
-          url: urlBase + "/enrollments/:id/programs",
-          method: "PUT"
-        },
-
-        // INTERNAL. Use Enrollment.programs.destroy() instead.
-        "prototype$__destroy__programs": {
-          url: urlBase + "/enrollments/:id/programs",
-          method: "DELETE"
-        },
-
         // INTERNAL. Use Enrollment.contact() instead.
         "prototype$__get__contact": {
           url: urlBase + "/enrollments/:id/contact",
@@ -5554,6 +5890,49 @@ module.factory(
           url: urlBase + "/contacts/:id/enrollments/count",
           method: "GET"
         },
+
+        // INTERNAL. Use Program.enrollment.findById() instead.
+        "::findById::program::enrollment": {
+          url: urlBase + "/programs/:id/enrollment/:fk",
+          method: "GET"
+        },
+
+        // INTERNAL. Use Program.enrollment.destroyById() instead.
+        "::destroyById::program::enrollment": {
+          url: urlBase + "/programs/:id/enrollment/:fk",
+          method: "DELETE"
+        },
+
+        // INTERNAL. Use Program.enrollment.updateById() instead.
+        "::updateById::program::enrollment": {
+          url: urlBase + "/programs/:id/enrollment/:fk",
+          method: "PUT"
+        },
+
+        // INTERNAL. Use Program.enrollment() instead.
+        "::get::program::enrollment": {
+          isArray: true,
+          url: urlBase + "/programs/:id/enrollment",
+          method: "GET"
+        },
+
+        // INTERNAL. Use Program.enrollment.create() instead.
+        "::create::program::enrollment": {
+          url: urlBase + "/programs/:id/enrollment",
+          method: "POST"
+        },
+
+        // INTERNAL. Use Program.enrollment.destroyAll() instead.
+        "::delete::program::enrollment": {
+          url: urlBase + "/programs/:id/enrollment",
+          method: "DELETE"
+        },
+
+        // INTERNAL. Use Program.enrollment.count() instead.
+        "::count::program::enrollment": {
+          url: urlBase + "/programs/:id/enrollment/count",
+          method: "GET"
+        },
       }
     );
 
@@ -5951,163 +6330,6 @@ module.factory(
         R.incomes.updateById = function() {
           var TargetResource = $injector.get("Income");
           var action = TargetResource["::updateById::enrollment::incomes"];
-          return action.apply(R, arguments);
-        };
-    /**
-     * @ngdoc object
-     * @name lbServices.Enrollment.programs
-     * @header lbServices.Enrollment.programs
-     * @object
-     * @description
-     *
-     * The object `Enrollment.programs` groups methods
-     * manipulating `Program` instances related to `Enrollment`.
-     *
-     * Call {@link lbServices.Enrollment#programs Enrollment.programs()}
-     * to query all related instances.
-     */
-
-
-        /**
-         * @ngdoc method
-         * @name lbServices.Enrollment#programs
-         * @methodOf lbServices.Enrollment
-         *
-         * @description
-         *
-         * Fetches hasOne relation programs.
-         *
-         * @param {Object=} parameters Request parameters.
-         *
-         *  - `id` – `{*}` - PersistedModel id
-         *
-         *  - `refresh` – `{boolean=}` - 
-         *
-         * @param {function(Object,Object)=} successCb
-         *   Success callback with two arguments: `value`, `responseHeaders`.
-         *
-         * @param {function(Object)=} errorCb Error callback with one argument:
-         *   `httpResponse`.
-         *
-         * @returns {Object} An empty reference that will be
-         *   populated with the actual data once the response is returned
-         *   from the server.
-         *
-         * <em>
-         * (The remote method definition does not provide any description.
-         * This usually means the response is a `Program` object.)
-         * </em>
-         */
-        R.programs = function() {
-          var TargetResource = $injector.get("Program");
-          var action = TargetResource["::get::enrollment::programs"];
-          return action.apply(R, arguments);
-        };
-
-        /**
-         * @ngdoc method
-         * @name lbServices.Enrollment.programs#create
-         * @methodOf lbServices.Enrollment.programs
-         *
-         * @description
-         *
-         * Creates a new instance in programs of this model.
-         *
-         * @param {Object=} parameters Request parameters.
-         *
-         *  - `id` – `{*}` - PersistedModel id
-         *
-         * @param {Object} postData Request data.
-         *
-         * This method expects a subset of model properties as request parameters.
-         *
-         * @param {function(Object,Object)=} successCb
-         *   Success callback with two arguments: `value`, `responseHeaders`.
-         *
-         * @param {function(Object)=} errorCb Error callback with one argument:
-         *   `httpResponse`.
-         *
-         * @returns {Object} An empty reference that will be
-         *   populated with the actual data once the response is returned
-         *   from the server.
-         *
-         * <em>
-         * (The remote method definition does not provide any description.
-         * This usually means the response is a `Program` object.)
-         * </em>
-         */
-        R.programs.create = function() {
-          var TargetResource = $injector.get("Program");
-          var action = TargetResource["::create::enrollment::programs"];
-          return action.apply(R, arguments);
-        };
-
-        /**
-         * @ngdoc method
-         * @name lbServices.Enrollment.programs#destroy
-         * @methodOf lbServices.Enrollment.programs
-         *
-         * @description
-         *
-         * Deletes programs of this model.
-         *
-         * @param {Object=} parameters Request parameters.
-         *
-         *  - `id` – `{*}` - PersistedModel id
-         *
-         * @param {function(Object,Object)=} successCb
-         *   Success callback with two arguments: `value`, `responseHeaders`.
-         *
-         * @param {function(Object)=} errorCb Error callback with one argument:
-         *   `httpResponse`.
-         *
-         * @returns {Object} An empty reference that will be
-         *   populated with the actual data once the response is returned
-         *   from the server.
-         *
-         * This method returns no data.
-         */
-        R.programs.destroy = function() {
-          var TargetResource = $injector.get("Program");
-          var action = TargetResource["::destroy::enrollment::programs"];
-          return action.apply(R, arguments);
-        };
-
-        /**
-         * @ngdoc method
-         * @name lbServices.Enrollment.programs#update
-         * @methodOf lbServices.Enrollment.programs
-         *
-         * @description
-         *
-         * Update programs of this model.
-         *
-         * @param {Object=} parameters Request parameters.
-         *
-         *  - `id` – `{*}` - PersistedModel id
-         *
-         * @param {Object} postData Request data.
-         *
-         * This method expects a subset of model properties as request parameters.
-         *
-         * @param {function(Object,Object)=} successCb
-         *   Success callback with two arguments: `value`, `responseHeaders`.
-         *
-         * @param {function(Object)=} errorCb Error callback with one argument:
-         *   `httpResponse`.
-         *
-         * @returns {Object} An empty reference that will be
-         *   populated with the actual data once the response is returned
-         *   from the server.
-         *
-         * <em>
-         * (The remote method definition does not provide any description.
-         * This usually means the response is a `Program` object.)
-         * </em>
-         */
-        R.programs.update = function() {
-          var TargetResource = $injector.get("Program");
-          var action = TargetResource["::update::enrollment::programs"];
           return action.apply(R, arguments);
         };
 
