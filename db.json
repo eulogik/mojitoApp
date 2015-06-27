@@ -10,7 +10,7 @@
     "center": 1,
     "expense": 1,
     "income": 3,
-    "enrollment": 8,
+    "enrollment": 16,
     "reminder": 1
   },
   "models": {
@@ -43,8 +43,14 @@
       "2": "{\"netFee\":1200,\"date\":\"2012-12-10T18:30:00.000Z\",\"status\":\"onhold\",\"createdAt\":\"2012-12-11T18:30:00.000Z\",\"id\":2,\"contactId\":2}",
       "3": "{\"netFee\":1500,\"date\":\"2012-12-09T18:30:00.000Z\",\"status\":\"ongoing\",\"createdAt\":\"2012-12-09T18:30:00.000Z\",\"id\":3,\"contactId\":3}",
       "4": "{\"netFee\":1700,\"date\":\"2015-06-05T18:30:00.000Z\",\"status\":\"onhold\",\"createdAt\":\"2015-06-05T18:30:00.000Z\",\"id\":4,\"contactId\":4}",
+      "5": "{\"netFee\":1500,\"date\":\"2015-12-05T18:30:00.000Z\",\"status\":\"onhold\",\"createdAt\":\"2015-12-05T18:30:00.000Z\",\"id\":5,\"contactId\":1}",
       "6": "{\"netFee\":1200,\"status\":\"ongoing\",\"createdAt\":\"2015-06-24T10:17:08.000Z\",\"contactId\":1,\"id\":6}",
-      "7": "{\"netFee\":1200,\"date\":\"2012-12-11T18:30:00.000Z\",\"status\":\"ongoing\",\"createdAt\":\"2015-06-26T11:57:56.000Z\",\"contactId\":6,\"id\":7}"
+      "7": "{\"netFee\":1200,\"date\":\"2012-12-11T18:30:00.000Z\",\"status\":\"ongoing\",\"createdAt\":\"2015-06-26T11:57:56.000Z\",\"contactId\":6,\"id\":7}",
+      "8": "{\"netFee\":1500,\"date\":\"2015-12-05T18:30:00.000Z\",\"status\":\"onhold\",\"createdAt\":\"2015-12-05T18:30:00.000Z\",\"id\":8,\"contactId\":1}",
+      "9": "{\"netFee\":2500,\"date\":\"2015-12-05T18:30:00.000Z\",\"status\":\"onhold\",\"createdAt\":\"2015-12-05T18:30:00.000Z\",\"id\":9,\"contactId\":1}",
+      "10": "{\"netFee\":2500,\"date\":\"2015-12-05T18:30:00.000Z\",\"status\":\"ongoing\",\"createdAt\":\"2015-12-05T18:30:00.000Z\",\"id\":10,\"contactId\":1}",
+      "11": "{\"netFee\":2000,\"date\":\"2015-12-07T18:30:00.000Z\",\"status\":\"onhold\",\"createdAt\":\"2015-12-07T18:30:00.000Z\",\"id\":11,\"contactId\":2}",
+      "12": "{\"netFee\":2000,\"date\":\"2015-12-07T18:30:00.000Z\",\"status\":\"ongoing\",\"createdAt\":\"2015-12-06T18:30:00.000Z\",\"id\":12,\"contactId\":2}"
     },
     "reminder": {}
   }

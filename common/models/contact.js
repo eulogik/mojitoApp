@@ -1,4 +1,3 @@
-
 module.exports = function(contact)
 {
   var conatct_array=[];
@@ -11,18 +10,17 @@ module.exports = function(contact)
 
       var status_array=e.enrollments;
       status_array.forEach(function(s){
-        if(s.status=='ongoing'){
+        if(s.status=='ongoing')
+        {
           enrollments2.type='customer';
-        }else{
+        }
+        else
+        {
           enrollments2.type='lead';
         }
-
       });
-
     });
     cb(null,d);
-
-
 });
 };
 
