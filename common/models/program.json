@@ -19,10 +19,10 @@
   "validations": [],
   "relations": {
     "enrollment": {
-    "type": "hasMany",
-    "model": "enrollment",
-    "foreignKey": ""
-  }
+      "type": "hasMany",
+      "model": "enrollment",
+      "foreignKey": ""
+    }
   },
   "acls": [],
   "methods": []
