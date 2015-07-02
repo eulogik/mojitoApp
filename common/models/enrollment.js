@@ -1,7 +1,7 @@
 module.exports = function(Enrollment) {
   Enrollment.newEnrollment=function(data, cb){
-  var enroll={"netFee":data.netFee,"date":data.enrollmentDate,"status":data.status,"createdAt":Date(), "contactId":data.contactId, "programId": data.programId};
-  var incomeObj={"amount":data.depositedAmount,"date":data.depositDate};
+  var enroll={"netFee":data.netFee,"date":data.enrollmentDate,"status":data.status,"createdAt":Date(), "contactId":data.contactId, "programId": data.programId,"centerId":data.centerId};
+  var incomeObj={"amount":data.depositedAmount,"date":data.depositDate,"centerId":data.centerId};
 
   Enrollment.create(enroll,function(err,instance){
     incomeObj.enrollmentId = instance.id;

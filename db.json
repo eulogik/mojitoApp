@@ -9,8 +9,8 @@
     "program": 1,
     "center": 1,
     "expense": 1,
-    "income": 3,
-    "enrollment": 16,
+    "income": 10,
+    "enrollment": 23,
     "reminder": 1
   },
   "models": {
@@ -45,7 +45,14 @@
     "expense": {},
     "income": {
       "1": "{\"enrollmentId\":6,\"id\":1}",
-      "2": "{\"amount\":300,\"date\":\"2012-12-11T18:30:00.000Z\",\"enrollmentId\":7,\"id\":2}"
+      "2": "{\"amount\":300,\"date\":\"2012-12-11T18:30:00.000Z\",\"enrollmentId\":7,\"id\":2}",
+      "3": "{\"enrollmentId\":16,\"id\":3}",
+      "4": "{\"enrollmentId\":17,\"id\":4}",
+      "5": "{\"enrollmentId\":18,\"id\":5}",
+      "6": "{\"enrollmentId\":19,\"id\":6}",
+      "7": "{\"enrollmentId\":20,\"id\":7}",
+      "8": "{\"centerId\":5,\"enrollmentId\":21,\"id\":8}",
+      "9": "{\"centerId\":16,\"enrollmentId\":22,\"id\":9}"
     },
     "enrollment": {
       "1": "{\"netFee\":1000,\"date\":\"2012-12-11T18:30:00.000Z\",\"status\":\"ongoing\",\"createdAt\":\"2012-12-11T18:30:00.000Z\",\"id\":1,\"contactId\":1}",
@@ -59,7 +66,14 @@
       "9": "{\"netFee\":2500,\"date\":\"2015-12-05T18:30:00.000Z\",\"status\":\"onhold\",\"createdAt\":\"2015-12-05T18:30:00.000Z\",\"id\":9,\"contactId\":1}",
       "10": "{\"netFee\":2500,\"date\":\"2015-12-05T18:30:00.000Z\",\"status\":\"ongoing\",\"createdAt\":\"2015-12-05T18:30:00.000Z\",\"id\":10,\"contactId\":1}",
       "11": "{\"netFee\":2000,\"date\":\"2015-12-07T18:30:00.000Z\",\"status\":\"onhold\",\"createdAt\":\"2015-12-07T18:30:00.000Z\",\"id\":11,\"contactId\":2}",
-      "12": "{\"netFee\":2000,\"date\":\"2015-12-07T18:30:00.000Z\",\"status\":\"ongoing\",\"createdAt\":\"2015-12-06T18:30:00.000Z\",\"id\":12,\"contactId\":2}"
+      "12": "{\"netFee\":2000,\"date\":\"2015-12-07T18:30:00.000Z\",\"status\":\"ongoing\",\"createdAt\":\"2015-12-06T18:30:00.000Z\",\"id\":12,\"contactId\":2}",
+      "16": "{\"netFee\":2000,\"status\":\"ongoing\",\"createdAt\":\"2015-07-02T04:24:54.000Z\",\"contactId\":1,\"programId\":1,\"id\":16}",
+      "17": "{\"netFee\":3000,\"status\":\"ongoing\",\"createdAt\":\"2015-07-02T04:33:42.000Z\",\"contactId\":1,\"programId\":1,\"id\":17}",
+      "18": "{\"netFee\":3000,\"status\":\"ongoing\",\"createdAt\":\"2015-07-02T04:33:45.000Z\",\"contactId\":1,\"programId\":1,\"id\":18}",
+      "19": "{\"netFee\":3000,\"status\":\"ongoing\",\"createdAt\":\"2015-07-02T04:33:45.000Z\",\"contactId\":1,\"programId\":1,\"id\":19}",
+      "20": "{\"netFee\":3000,\"status\":\"ongoing\",\"createdAt\":\"2015-07-02T04:33:46.000Z\",\"contactId\":1,\"programId\":1,\"id\":20}",
+      "21": "{\"netFee\":4000,\"status\":\"ongoing\",\"createdAt\":\"2015-07-02T04:35:03.000Z\",\"centerId\":5,\"contactId\":5,\"programId\":5,\"id\":21}",
+      "22": "{\"netFee\":8000,\"status\":\"ongoing\",\"createdAt\":\"2015-07-02T04:36:39.000Z\",\"centerId\":16,\"contactId\":16,\"programId\":16,\"id\":22}"
     },
     "reminder": {}
   }
