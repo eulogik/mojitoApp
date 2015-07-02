@@ -11,5 +11,6 @@ newEnrollment function accepts an object like:
   "status": "ongoing",
   "depositedAmount": 300,
   "depositDate": "12-12-2012",
-  "contactId": 6
+  "contactId": 6,
+  "centerId":10
 }
