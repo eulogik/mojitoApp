@@ -53,5 +53,9 @@
   "reminder": {
     "dataSource": "db",
     "public": true
+  },
+  "note": {
+    "dataSource": null,
+    "public": true
   }
 }
