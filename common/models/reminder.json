@@ -3,14 +3,14 @@
   "base": "PersistedModel",
   "idInjection": true,
   "properties": {
+    "completed": {
+      "type": "boolean"
+    },
     "date": {
       "type": "date"
     },
     "title": {
       "type": "string"
-    },
-    "completed": {
-      "type": "boolean"
     }
   },
   "validations": [],

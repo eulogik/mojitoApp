@@ -1,0 +1,24 @@
+{
+  "name": "note",
+  "base": "PersistedModel",
+  "strict": false,
+  "idInjection": false,
+  "properties": {
+    "title": {
+      "type": "string"
+    },
+    "createdAt": {
+      "type": "date"
+    },
+    "reminder": {
+      "type": "reminder"
+    },
+    "attachment": {
+      "type": "buffer"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": []
+}
