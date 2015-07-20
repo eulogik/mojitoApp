@@ -11,7 +11,8 @@
     "expense": 1,
     "income": 14,
     "enrollment": 27,
-    "reminder": 1
+    "reminder": 1,
+    "note": 2
   },
   "models": {
     "User": {
@@ -83,6 +84,9 @@
       "25": "{\"netFee\":40000,\"date\":\"2015-02-06T18:30:00.000Z\",\"status\":\"ongoing\",\"createdAt\":\"2015-07-02T09:30:48.000Z\",\"centerId\":10,\"contactId\":6,\"id\":25}",
       "26": "{\"netFee\":40000,\"date\":\"2015-02-06T18:30:00.000Z\",\"status\":\"ongoing\",\"createdAt\":\"2015-07-02T09:31:05.000Z\",\"centerId\":1000,\"contactId\":6000,\"id\":26}"
     },
-    "reminder": {}
+    "reminder": {},
+    "note": {
+      "1": "{\"title\":\"test\",\"createdAt\":\"2015-12-11T18:30:00.000Z\",\"reminder\":{\"completed\":false,\"date\":\"2015-12-11T18:30:00.000Z\",\"title\":\"test\",\"id\":0,\"centerId\":0,\"contactId\":0},\"attachment\":{\"type\":\"Buffer\",\"data\":[]},\"id\":1}"
+    }
   }
 }
