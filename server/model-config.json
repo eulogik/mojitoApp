@@ -55,7 +55,7 @@
     "public": true
   },
   "note": {
-    "dataSource": null,
+    "dataSource": "db",
     "public": true
   }
 }
