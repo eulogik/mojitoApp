@@ -6,18 +6,29 @@
     "completed": {
       "type": "boolean"
     },
-    "date": {
-      "type": "date"
-    },
     "title": {
       "type": "string"
+    },
+    "createdAt": {
+      "type": "date"
+    },
+    "remindAt": {
+      "type": "date"
+    },
+    "responsibleUserId": {
+      "type": "number"
     }
   },
   "validations": [],
   "relations": {
     "center": {
       "type": "belongsTo",
-      "model": "center",
+      "model": "user",
+      "foreignKey": ""
+    },
+    "notes": {
+      "type": "hasOne",
+      "model": "note",
       "foreignKey": ""
     }
   },

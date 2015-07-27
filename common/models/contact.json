@@ -38,9 +38,9 @@
       "model": "enrollment",
       "foreignKey": ""
     },
-    "reminders": {
+    "notes": {
       "type": "hasMany",
-      "model": "reminder",
+      "model": "note",
       "foreignKey": ""
     }
   },
