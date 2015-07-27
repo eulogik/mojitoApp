@@ -4,21 +4,24 @@
   "strict": false,
   "idInjection": false,
   "properties": {
-    "title": {
-      "type": "string"
-    },
     "createdAt": {
       "type": "date"
     },
-    "reminder": {
-      "type": "reminder"
+    "title": {
+      "type": "string"
     },
     "attachment": {
-      "type": "buffer"
+      "type": "string"
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "reminders": {
+      "type": "hasOne",
+      "model": "reminder",
+      "foreignKey": ""
+    }
+  },
   "acls": [],
   "methods": []
 }

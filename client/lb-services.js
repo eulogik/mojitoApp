@@ -1,6 +1,6 @@
 (function(window, angular, undefined) {'use strict';
 
-var urlBase = "http://node.eulogik.com:3060/api";
+var urlBase = "/api";
 var authHeader = 'authorization';
 
 /**
@@ -1055,21 +1055,21 @@ module.factory(
           method: "PUT"
         },
 
-        // INTERNAL. Use Contact.reminders.findById() instead.
-        "prototype$__findById__reminders": {
-          url: urlBase + "/contacts/:id/reminders/:fk",
+        // INTERNAL. Use Contact.notes.findById() instead.
+        "prototype$__findById__notes": {
+          url: urlBase + "/contacts/:id/notes/:fk",
           method: "GET"
         },
 
-        // INTERNAL. Use Contact.reminders.destroyById() instead.
-        "prototype$__destroyById__reminders": {
-          url: urlBase + "/contacts/:id/reminders/:fk",
+        // INTERNAL. Use Contact.notes.destroyById() instead.
+        "prototype$__destroyById__notes": {
+          url: urlBase + "/contacts/:id/notes/:fk",
           method: "DELETE"
         },
 
-        // INTERNAL. Use Contact.reminders.updateById() instead.
-        "prototype$__updateById__reminders": {
-          url: urlBase + "/contacts/:id/reminders/:fk",
+        // INTERNAL. Use Contact.notes.updateById() instead.
+        "prototype$__updateById__notes": {
+          url: urlBase + "/contacts/:id/notes/:fk",
           method: "PUT"
         },
 
@@ -1098,28 +1098,28 @@ module.factory(
           method: "GET"
         },
 
-        // INTERNAL. Use Contact.reminders() instead.
-        "prototype$__get__reminders": {
+        // INTERNAL. Use Contact.notes() instead.
+        "prototype$__get__notes": {
           isArray: true,
-          url: urlBase + "/contacts/:id/reminders",
+          url: urlBase + "/contacts/:id/notes",
           method: "GET"
         },
 
-        // INTERNAL. Use Contact.reminders.create() instead.
-        "prototype$__create__reminders": {
-          url: urlBase + "/contacts/:id/reminders",
+        // INTERNAL. Use Contact.notes.create() instead.
+        "prototype$__create__notes": {
+          url: urlBase + "/contacts/:id/notes",
           method: "POST"
         },
 
-        // INTERNAL. Use Contact.reminders.destroyAll() instead.
-        "prototype$__delete__reminders": {
-          url: urlBase + "/contacts/:id/reminders",
+        // INTERNAL. Use Contact.notes.destroyAll() instead.
+        "prototype$__delete__notes": {
+          url: urlBase + "/contacts/:id/notes",
           method: "DELETE"
         },
 
-        // INTERNAL. Use Contact.reminders.count() instead.
-        "prototype$__count__reminders": {
-          url: urlBase + "/contacts/:id/reminders/count",
+        // INTERNAL. Use Contact.notes.count() instead.
+        "prototype$__count__notes": {
+          url: urlBase + "/contacts/:id/notes/count",
           method: "GET"
         },
 
@@ -1993,27 +1993,27 @@ module.factory(
         };
     /**
      * @ngdoc object
-     * @name lbServices.Contact.reminders
-     * @header lbServices.Contact.reminders
+     * @name lbServices.Contact.notes
+     * @header lbServices.Contact.notes
      * @object
      * @description
      *
-     * The object `Contact.reminders` groups methods
-     * manipulating `Reminder` instances related to `Contact`.
+     * The object `Contact.notes` groups methods
+     * manipulating `Note` instances related to `Contact`.
      *
-     * Call {@link lbServices.Contact#reminders Contact.reminders()}
+     * Call {@link lbServices.Contact#notes Contact.notes()}
      * to query all related instances.
      */
 
 
         /**
          * @ngdoc method
-         * @name lbServices.Contact#reminders
+         * @name lbServices.Contact#notes
          * @methodOf lbServices.Contact
          *
          * @description
          *
-         * Queries reminders of contact.
+         * Queries notes of contact.
          *
          * @param {Object=} parameters Request parameters.
          *
@@ -2033,23 +2033,23 @@ module.factory(
          *
          * <em>
          * (The remote method definition does not provide any description.
-         * This usually means the response is a `Reminder` object.)
+         * This usually means the response is a `Note` object.)
          * </em>
          */
-        R.reminders = function() {
-          var TargetResource = $injector.get("Reminder");
-          var action = TargetResource["::get::contact::reminders"];
+        R.notes = function() {
+          var TargetResource = $injector.get("Note");
+          var action = TargetResource["::get::contact::notes"];
           return action.apply(R, arguments);
         };
 
         /**
          * @ngdoc method
-         * @name lbServices.Contact.reminders#count
-         * @methodOf lbServices.Contact.reminders
+         * @name lbServices.Contact.notes#count
+         * @methodOf lbServices.Contact.notes
          *
          * @description
          *
-         * Counts reminders of contact.
+         * Counts notes of contact.
          *
          * @param {Object=} parameters Request parameters.
          *
@@ -2071,20 +2071,20 @@ module.factory(
          *
          *  - `count` – `{number=}` - 
          */
-        R.reminders.count = function() {
-          var TargetResource = $injector.get("Reminder");
-          var action = TargetResource["::count::contact::reminders"];
+        R.notes.count = function() {
+          var TargetResource = $injector.get("Note");
+          var action = TargetResource["::count::contact::notes"];
           return action.apply(R, arguments);
         };
 
         /**
          * @ngdoc method
-         * @name lbServices.Contact.reminders#create
-         * @methodOf lbServices.Contact.reminders
+         * @name lbServices.Contact.notes#create
+         * @methodOf lbServices.Contact.notes
          *
          * @description
          *
-         * Creates a new instance in reminders of this model.
+         * Creates a new instance in notes of this model.
          *
          * @param {Object=} parameters Request parameters.
          *
@@ -2106,23 +2106,23 @@ module.factory(
          *
          * <em>
          * (The remote method definition does not provide any description.
-         * This usually means the response is a `Reminder` object.)
+         * This usually means the response is a `Note` object.)
          * </em>
          */
-        R.reminders.create = function() {
-          var TargetResource = $injector.get("Reminder");
-          var action = TargetResource["::create::contact::reminders"];
+        R.notes.create = function() {
+          var TargetResource = $injector.get("Note");
+          var action = TargetResource["::create::contact::notes"];
           return action.apply(R, arguments);
         };
 
         /**
          * @ngdoc method
-         * @name lbServices.Contact.reminders#destroyAll
-         * @methodOf lbServices.Contact.reminders
+         * @name lbServices.Contact.notes#destroyAll
+         * @methodOf lbServices.Contact.notes
          *
          * @description
          *
-         * Deletes all reminders of this model.
+         * Deletes all notes of this model.
          *
          * @param {Object=} parameters Request parameters.
          *
@@ -2140,26 +2140,26 @@ module.factory(
          *
          * This method returns no data.
          */
-        R.reminders.destroyAll = function() {
-          var TargetResource = $injector.get("Reminder");
-          var action = TargetResource["::delete::contact::reminders"];
+        R.notes.destroyAll = function() {
+          var TargetResource = $injector.get("Note");
+          var action = TargetResource["::delete::contact::notes"];
           return action.apply(R, arguments);
         };
 
         /**
          * @ngdoc method
-         * @name lbServices.Contact.reminders#destroyById
-         * @methodOf lbServices.Contact.reminders
+         * @name lbServices.Contact.notes#destroyById
+         * @methodOf lbServices.Contact.notes
          *
          * @description
          *
-         * Delete a related item by id for reminders.
+         * Delete a related item by id for notes.
          *
          * @param {Object=} parameters Request parameters.
          *
          *  - `id` – `{*}` - PersistedModel id
          *
-         *  - `fk` – `{*}` - Foreign key for reminders
+         *  - `fk` – `{*}` - Foreign key for notes
          *
          * @param {function(Object,Object)=} successCb
          *   Success callback with two arguments: `value`, `responseHeaders`.
@@ -2173,26 +2173,26 @@ module.factory(
          *
          * This method returns no data.
          */
-        R.reminders.destroyById = function() {
-          var TargetResource = $injector.get("Reminder");
-          var action = TargetResource["::destroyById::contact::reminders"];
+        R.notes.destroyById = function() {
+          var TargetResource = $injector.get("Note");
+          var action = TargetResource["::destroyById::contact::notes"];
           return action.apply(R, arguments);
         };
 
         /**
          * @ngdoc method
-         * @name lbServices.Contact.reminders#findById
-         * @methodOf lbServices.Contact.reminders
+         * @name lbServices.Contact.notes#findById
+         * @methodOf lbServices.Contact.notes
          *
          * @description
          *
-         * Find a related item by id for reminders.
+         * Find a related item by id for notes.
          *
          * @param {Object=} parameters Request parameters.
          *
          *  - `id` – `{*}` - PersistedModel id
          *
-         *  - `fk` – `{*}` - Foreign key for reminders
+         *  - `fk` – `{*}` - Foreign key for notes
          *
          * @param {function(Object,Object)=} successCb
          *   Success callback with two arguments: `value`, `responseHeaders`.
@@ -2206,29 +2206,29 @@ module.factory(
          *
          * <em>
          * (The remote method definition does not provide any description.
-         * This usually means the response is a `Reminder` object.)
+         * This usually means the response is a `Note` object.)
          * </em>
          */
-        R.reminders.findById = function() {
-          var TargetResource = $injector.get("Reminder");
-          var action = TargetResource["::findById::contact::reminders"];
+        R.notes.findById = function() {
+          var TargetResource = $injector.get("Note");
+          var action = TargetResource["::findById::contact::notes"];
           return action.apply(R, arguments);
         };
 
         /**
          * @ngdoc method
-         * @name lbServices.Contact.reminders#updateById
-         * @methodOf lbServices.Contact.reminders
+         * @name lbServices.Contact.notes#updateById
+         * @methodOf lbServices.Contact.notes
          *
          * @description
          *
-         * Update a related item by id for reminders.
+         * Update a related item by id for notes.
          *
          * @param {Object=} parameters Request parameters.
          *
          *  - `id` – `{*}` - PersistedModel id
          *
-         *  - `fk` – `{*}` - Foreign key for reminders
+         *  - `fk` – `{*}` - Foreign key for notes
          *
          * @param {Object} postData Request data.
          *
@@ -2246,12 +2246,12 @@ module.factory(
          *
          * <em>
          * (The remote method definition does not provide any description.
-         * This usually means the response is a `Reminder` object.)
+         * This usually means the response is a `Note` object.)
          * </em>
          */
-        R.reminders.updateById = function() {
-          var TargetResource = $injector.get("Reminder");
-          var action = TargetResource["::updateById::contact::reminders"];
+        R.notes.updateById = function() {
+          var TargetResource = $injector.get("Note");
+          var action = TargetResource["::updateById::contact::notes"];
           return action.apply(R, arguments);
         };
 
@@ -3534,12 +3534,6 @@ module.factory(
         // INTERNAL. Use Income.center() instead.
         "::get::income::center": {
           url: urlBase + "/incomes/:id/center",
-          method: "GET"
-        },
-
-        // INTERNAL. Use Reminder.center() instead.
-        "::get::reminder::center": {
-          url: urlBase + "/reminders/:id/center",
           method: "GET"
         },
       }
@@ -6397,10 +6391,28 @@ module.factory(
       { 'id': '@id' },
       {
 
-        // INTERNAL. Use Reminder.center() instead.
-        "prototype$__get__center": {
-          url: urlBase + "/reminders/:id/center",
+        // INTERNAL. Use Reminder.notes() instead.
+        "prototype$__get__notes": {
+          url: urlBase + "/reminders/:id/notes",
           method: "GET"
+        },
+
+        // INTERNAL. Use Reminder.notes.create() instead.
+        "prototype$__create__notes": {
+          url: urlBase + "/reminders/:id/notes",
+          method: "POST"
+        },
+
+        // INTERNAL. Use Reminder.notes.update() instead.
+        "prototype$__update__notes": {
+          url: urlBase + "/reminders/:id/notes",
+          method: "PUT"
+        },
+
+        // INTERNAL. Use Reminder.notes.destroy() instead.
+        "prototype$__destroy__notes": {
+          url: urlBase + "/reminders/:id/notes",
+          method: "DELETE"
         },
 
         /**
@@ -6746,47 +6758,28 @@ module.factory(
           method: "PUT"
         },
 
-        // INTERNAL. Use Contact.reminders.findById() instead.
-        "::findById::contact::reminders": {
-          url: urlBase + "/contacts/:id/reminders/:fk",
+        // INTERNAL. Use Note.reminders() instead.
+        "::get::note::reminders": {
+          url: urlBase + "/notes/:id/reminders",
           method: "GET"
         },
 
-        // INTERNAL. Use Contact.reminders.destroyById() instead.
-        "::destroyById::contact::reminders": {
-          url: urlBase + "/contacts/:id/reminders/:fk",
-          method: "DELETE"
-        },
-
-        // INTERNAL. Use Contact.reminders.updateById() instead.
-        "::updateById::contact::reminders": {
-          url: urlBase + "/contacts/:id/reminders/:fk",
-          method: "PUT"
-        },
-
-        // INTERNAL. Use Contact.reminders() instead.
-        "::get::contact::reminders": {
-          isArray: true,
-          url: urlBase + "/contacts/:id/reminders",
-          method: "GET"
-        },
-
-        // INTERNAL. Use Contact.reminders.create() instead.
-        "::create::contact::reminders": {
-          url: urlBase + "/contacts/:id/reminders",
+        // INTERNAL. Use Note.reminders.create() instead.
+        "::create::note::reminders": {
+          url: urlBase + "/notes/:id/reminders",
           method: "POST"
         },
 
-        // INTERNAL. Use Contact.reminders.destroyAll() instead.
-        "::delete::contact::reminders": {
-          url: urlBase + "/contacts/:id/reminders",
-          method: "DELETE"
+        // INTERNAL. Use Note.reminders.update() instead.
+        "::update::note::reminders": {
+          url: urlBase + "/notes/:id/reminders",
+          method: "PUT"
         },
 
-        // INTERNAL. Use Contact.reminders.count() instead.
-        "::count::contact::reminders": {
-          url: urlBase + "/contacts/:id/reminders/count",
-          method: "GET"
+        // INTERNAL. Use Note.reminders.destroy() instead.
+        "::destroy::note::reminders": {
+          url: urlBase + "/notes/:id/reminders",
+          method: "DELETE"
         },
       }
     );
@@ -6924,15 +6917,29 @@ module.factory(
     */
     R.modelName = "Reminder";
 
+    /**
+     * @ngdoc object
+     * @name lbServices.Reminder.notes
+     * @header lbServices.Reminder.notes
+     * @object
+     * @description
+     *
+     * The object `Reminder.notes` groups methods
+     * manipulating `Note` instances related to `Reminder`.
+     *
+     * Call {@link lbServices.Reminder#notes Reminder.notes()}
+     * to query all related instances.
+     */
+
 
         /**
          * @ngdoc method
-         * @name lbServices.Reminder#center
+         * @name lbServices.Reminder#notes
          * @methodOf lbServices.Reminder
          *
          * @description
          *
-         * Fetches belongsTo relation center.
+         * Fetches hasOne relation notes.
          *
          * @param {Object=} parameters Request parameters.
          *
@@ -6952,12 +6959,119 @@ module.factory(
          *
          * <em>
          * (The remote method definition does not provide any description.
-         * This usually means the response is a `Center` object.)
+         * This usually means the response is a `Note` object.)
          * </em>
          */
-        R.center = function() {
-          var TargetResource = $injector.get("Center");
-          var action = TargetResource["::get::reminder::center"];
+        R.notes = function() {
+          var TargetResource = $injector.get("Note");
+          var action = TargetResource["::get::reminder::notes"];
+          return action.apply(R, arguments);
+        };
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Reminder.notes#create
+         * @methodOf lbServices.Reminder.notes
+         *
+         * @description
+         *
+         * Creates a new instance in notes of this model.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - PersistedModel id
+         *
+         * @param {Object} postData Request data.
+         *
+         * This method expects a subset of model properties as request parameters.
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Note` object.)
+         * </em>
+         */
+        R.notes.create = function() {
+          var TargetResource = $injector.get("Note");
+          var action = TargetResource["::create::reminder::notes"];
+          return action.apply(R, arguments);
+        };
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Reminder.notes#destroy
+         * @methodOf lbServices.Reminder.notes
+         *
+         * @description
+         *
+         * Deletes notes of this model.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - PersistedModel id
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * This method returns no data.
+         */
+        R.notes.destroy = function() {
+          var TargetResource = $injector.get("Note");
+          var action = TargetResource["::destroy::reminder::notes"];
+          return action.apply(R, arguments);
+        };
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Reminder.notes#update
+         * @methodOf lbServices.Reminder.notes
+         *
+         * @description
+         *
+         * Update notes of this model.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - PersistedModel id
+         *
+         * @param {Object} postData Request data.
+         *
+         * This method expects a subset of model properties as request parameters.
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Note` object.)
+         * </em>
+         */
+        R.notes.update = function() {
+          var TargetResource = $injector.get("Note");
+          var action = TargetResource["::update::reminder::notes"];
           return action.apply(R, arguments);
         };
 
@@ -6988,6 +7102,30 @@ module.factory(
       urlBase + "/notes/:id",
       { 'id': '@id' },
       {
+
+        // INTERNAL. Use Note.reminders() instead.
+        "prototype$__get__reminders": {
+          url: urlBase + "/notes/:id/reminders",
+          method: "GET"
+        },
+
+        // INTERNAL. Use Note.reminders.create() instead.
+        "prototype$__create__reminders": {
+          url: urlBase + "/notes/:id/reminders",
+          method: "POST"
+        },
+
+        // INTERNAL. Use Note.reminders.update() instead.
+        "prototype$__update__reminders": {
+          url: urlBase + "/notes/:id/reminders",
+          method: "PUT"
+        },
+
+        // INTERNAL. Use Note.reminders.destroy() instead.
+        "prototype$__destroy__reminders": {
+          url: urlBase + "/notes/:id/reminders",
+          method: "DELETE"
+        },
 
         /**
          * @ngdoc method
@@ -7331,6 +7469,73 @@ module.factory(
           url: urlBase + "/notes/:id",
           method: "PUT"
         },
+
+        // INTERNAL. Use Contact.notes.findById() instead.
+        "::findById::contact::notes": {
+          url: urlBase + "/contacts/:id/notes/:fk",
+          method: "GET"
+        },
+
+        // INTERNAL. Use Contact.notes.destroyById() instead.
+        "::destroyById::contact::notes": {
+          url: urlBase + "/contacts/:id/notes/:fk",
+          method: "DELETE"
+        },
+
+        // INTERNAL. Use Contact.notes.updateById() instead.
+        "::updateById::contact::notes": {
+          url: urlBase + "/contacts/:id/notes/:fk",
+          method: "PUT"
+        },
+
+        // INTERNAL. Use Contact.notes() instead.
+        "::get::contact::notes": {
+          isArray: true,
+          url: urlBase + "/contacts/:id/notes",
+          method: "GET"
+        },
+
+        // INTERNAL. Use Contact.notes.create() instead.
+        "::create::contact::notes": {
+          url: urlBase + "/contacts/:id/notes",
+          method: "POST"
+        },
+
+        // INTERNAL. Use Contact.notes.destroyAll() instead.
+        "::delete::contact::notes": {
+          url: urlBase + "/contacts/:id/notes",
+          method: "DELETE"
+        },
+
+        // INTERNAL. Use Contact.notes.count() instead.
+        "::count::contact::notes": {
+          url: urlBase + "/contacts/:id/notes/count",
+          method: "GET"
+        },
+
+        // INTERNAL. Use Reminder.notes() instead.
+        "::get::reminder::notes": {
+          url: urlBase + "/reminders/:id/notes",
+          method: "GET"
+        },
+
+        // INTERNAL. Use Reminder.notes.create() instead.
+        "::create::reminder::notes": {
+          url: urlBase + "/reminders/:id/notes",
+          method: "POST"
+        },
+
+        // INTERNAL. Use Reminder.notes.update() instead.
+        "::update::reminder::notes": {
+          url: urlBase + "/reminders/:id/notes",
+          method: "PUT"
+        },
+
+        // INTERNAL. Use Reminder.notes.destroy() instead.
+        "::destroy::reminder::notes": {
+          url: urlBase + "/reminders/:id/notes",
+          method: "DELETE"
+        },
       }
     );
 
@@ -7467,6 +7672,163 @@ module.factory(
     */
     R.modelName = "Note";
 
+    /**
+     * @ngdoc object
+     * @name lbServices.Note.reminders
+     * @header lbServices.Note.reminders
+     * @object
+     * @description
+     *
+     * The object `Note.reminders` groups methods
+     * manipulating `Reminder` instances related to `Note`.
+     *
+     * Call {@link lbServices.Note#reminders Note.reminders()}
+     * to query all related instances.
+     */
+
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Note#reminders
+         * @methodOf lbServices.Note
+         *
+         * @description
+         *
+         * Fetches hasOne relation reminders.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - PersistedModel id
+         *
+         *  - `refresh` – `{boolean=}` - 
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Reminder` object.)
+         * </em>
+         */
+        R.reminders = function() {
+          var TargetResource = $injector.get("Reminder");
+          var action = TargetResource["::get::note::reminders"];
+          return action.apply(R, arguments);
+        };
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Note.reminders#create
+         * @methodOf lbServices.Note.reminders
+         *
+         * @description
+         *
+         * Creates a new instance in reminders of this model.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - PersistedModel id
+         *
+         * @param {Object} postData Request data.
+         *
+         * This method expects a subset of model properties as request parameters.
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Reminder` object.)
+         * </em>
+         */
+        R.reminders.create = function() {
+          var TargetResource = $injector.get("Reminder");
+          var action = TargetResource["::create::note::reminders"];
+          return action.apply(R, arguments);
+        };
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Note.reminders#destroy
+         * @methodOf lbServices.Note.reminders
+         *
+         * @description
+         *
+         * Deletes reminders of this model.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - PersistedModel id
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * This method returns no data.
+         */
+        R.reminders.destroy = function() {
+          var TargetResource = $injector.get("Reminder");
+          var action = TargetResource["::destroy::note::reminders"];
+          return action.apply(R, arguments);
+        };
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Note.reminders#update
+         * @methodOf lbServices.Note.reminders
+         *
+         * @description
+         *
+         * Update reminders of this model.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - PersistedModel id
+         *
+         * @param {Object} postData Request data.
+         *
+         * This method expects a subset of model properties as request parameters.
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Reminder` object.)
+         * </em>
+         */
+        R.reminders.update = function() {
+          var TargetResource = $injector.get("Reminder");
+          var action = TargetResource["::update::note::reminders"];
+          return action.apply(R, arguments);
+        };
 
     return R;
   }]);
